@@ -450,6 +450,42 @@ body {
   left: 10px;
 }
 
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+  top: 160px;
+  right: -5px;
+}
+
+.project-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.project-link a:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(247, 197, 45, 0.4);
+}
+
+.project-link a i {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.project-link a:hover i {
+  color: var(--text-color-two);
+}
+
 /* Footer */
 #footer {
   background: #111111;
