@@ -13,6 +13,38 @@
       content="Abhishek Yadav, Software Developer, Web Developer, React, Java, JavaScript, Portfolio, Frontend Developer"
     />
     <meta name="author" content="Abhishek Yadav" />
+    <!-- Open Graph Meta Tags for Rich Social Sharing -->
+    <meta
+      property="og:title"
+      content="Abhishek Yadav | Software Developer & Designer"
+    />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer & Visual Designer crafting high-performance web applications and intuitive user experiences. Explore projects, services, and get in touch."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.abhishekyadav.me" />
+    <meta
+      property="og:image"
+      content="https://www.abhishekyadav.me/assets/profile-image.png"
+    />
+    <meta property="og:image:alt" content="Abhishek Yadav Portfolio Preview" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Abhishek Yadav | Software Developer & Designer"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-Stack Developer & Visual Designer crafting high-performance web applications and intuitive user experiences. Explore projects, services, and get in touch."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.abhishekyadav.me/assets/profile-image.png"
+    />
+    <meta name="twitter:creator" content="@AbhishekYadav" />
     <title>Abhishek Yadav | Software Developer Portfolio</title>
     <link
       rel="icon"
@@ -25,12 +57,114 @@
       type="image/svg+xml"
       href="assets/favicon.svg?v=3"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
+    <!-- Theme Colors for Light/Dark (light first for initial paint) -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0b1120"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+    <!-- Preconnects for faster font CSS fetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts with display=swap to avoid FOIT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload hero image to improve LCP -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/profile-image.png"
+      fetchpriority="high"
+    />
+
+    <!-- Critical CSS: minimal above-the-fold styles -->
+    <style>
+      :root {
+        --primary-color: #7c3aed;
+        --secondary-color: #22d3ee;
+        --bg-primary: #f5f5ff;
+        --text-color: #0f172a;
+        --text-color-two: #ffffff;
+        --width-large: 1480px;
+        --section-gutter: clamp(1.25rem, 3.6vw, 3.25rem);
+      }
+      [data-theme='dark'] :root {
+        --text-color: #e2e8f0;
+        --bg-primary: #050712;
+      }
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Raleway', system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+        color: var(--text-color);
+        background: #f6f7ff;
+      }
+      .container {
+        width: 100%;
+        max-width: var(--width-large);
+        margin: 0 auto;
+        padding-inline: var(--section-gutter);
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.42);
+        backdrop-filter: saturate(140%) blur(8px);
+        border-bottom: 1px solid rgba(124, 58, 237, 0.18);
+      }
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 100px;
+      }
+      .header-container {
+        text-align: center;
+        width: min(100%, var(--width-large));
+        margin: 0 auto;
+        padding: clamp(3rem, 7vw, 6rem) var(--section-gutter);
+      }
+      .hero-subtitle {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        color: transparent;
+        background: linear-gradient(
+          90deg,
+          rgba(124, 58, 237, 0.8),
+          rgba(34, 211, 238, 0.8)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+    </style>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utilities.css" />
     <!-- AOS Animation Library -->
@@ -39,6 +173,7 @@
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      defer
     ></script>
   </head>
   <body>
@@ -48,11 +183,114 @@
         <div class="container">
           <!-- Logo -->
           <h1 id="logo">
-            <a href="https://github.com/Abhish3k-Yadav"
-              ><img
-                src="./assets/logo.svg"
-                alt="Abhishek Yadav - Developer Portfolio"
-            /></a>
+            <a
+              href="https://github.com/Abhish3k-Yadav"
+              aria-label="Abhishek Yadav - Developer Portfolio"
+            >
+              <!-- Inline critical logo SVG to avoid extra request -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="80"
+                height="80"
+                role="img"
+                aria-label="Abhishek Yadav Logo Mark"
+              >
+                <defs>
+                  <linearGradient
+                    id="body-light"
+                    x1="12"
+                    y1="14"
+                    x2="52"
+                    y2="50"
+                  >
+                    <stop offset="0%" stop-color="#7c3aed" />
+                    <stop offset="50%" stop-color="#22d3ee" />
+                    <stop offset="100%" stop-color="#7c3aed" />
+                  </linearGradient>
+                  <linearGradient
+                    id="body-dark"
+                    x1="12"
+                    y1="14"
+                    x2="52"
+                    y2="50"
+                  >
+                    <stop offset="0%" stop-color="#22d3ee" />
+                    <stop offset="50%" stop-color="#a855f7" />
+                    <stop offset="100%" stop-color="#38e2ff" />
+                  </linearGradient>
+                  <linearGradient
+                    id="badge-light"
+                    x1="32"
+                    y1="20"
+                    x2="52"
+                    y2="44"
+                  >
+                    <stop offset="0%" stop-color="#22d3ee" />
+                    <stop offset="50%" stop-color="#7c3aed" />
+                    <stop offset="100%" stop-color="#22d3ee" />
+                  </linearGradient>
+                  <linearGradient
+                    id="badge-dark"
+                    x1="32"
+                    y1="20"
+                    x2="52"
+                    y2="44"
+                  >
+                    <stop offset="0%" stop-color="#a855f7" />
+                    <stop offset="50%" stop-color="#38e2ff" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    class="logo-body"
+                    d="M18 18h20l6 6v20c0 3.3-2.7 6-6 6H18c-3.3 0-6-2.7-6-6V24c0-3.3 2.7-6 6-6z"
+                    stroke-width="4"
+                  />
+                  <path
+                    class="logo-body"
+                    d="M26 12h8c1.7 0 3 1.3 3 3v3"
+                    stroke-width="4"
+                  />
+                  <path
+                    class="logo-badge"
+                    d="M34 32l14-6v20c0 3.3-2.7 6-6 6H28"
+                    stroke-width="4"
+                  />
+                  <circle
+                    class="logo-icon"
+                    cx="44"
+                    cy="34"
+                    r="4"
+                    stroke-width="3.5"
+                  />
+                  <path
+                    class="logo-icon"
+                    d="M48 44c-1.3-2.2-2.8-3.2-4-3.2s-2.7 1-4 3.2"
+                    stroke-width="3.5"
+                  />
+                </g>
+                <style>
+                  .logo-body {
+                    stroke: url(#body-light);
+                  }
+                  .logo-badge,
+                  .logo-icon {
+                    stroke: url(#badge-light);
+                  }
+                  @media (prefers-color-scheme: dark) {
+                    .logo-body {
+                      stroke: url(#body-dark);
+                    }
+                    .logo-badge,
+                    .logo-icon {
+                      stroke: url(#badge-dark);
+                    }
+                  }
+                </style>
+              </svg>
+            </a>
           </h1>
           <!-- Navbar links -->
           <ul class="nav-menu">
@@ -102,11 +340,23 @@
           data-aos-duration="1000"
         >
           <span class="portrait-outline" aria-hidden="true"></span>
-          <img
-            class="profile-image floating-avatar"
-            src="assets/profile-image.png"
-            alt="Abhishek Yadav - Software Developer"
-          />
+          <!-- Picture wrapper ready for modern formats; add sources when assets exist -->
+          <picture>
+            <!--
+            <source srcset="assets/profile-image.avif" type="image/avif" />
+            <source srcset="assets/profile-image.webp" type="image/webp" />
+            -->
+            <img
+              class="profile-image floating-avatar"
+              src="assets/profile-image.png"
+              alt="Abhishek Yadav - Software Developer"
+              decoding="async"
+              fetchpriority="high"
+              loading="eager"
+              width="220"
+              height="220"
+            />
+          </picture>
         </div>
         <h1 data-aos="fade-up" data-aos-delay="200">Hi, I'm Abhishek</h1>
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
@@ -125,10 +375,10 @@
         </div>
 
         <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
-          <a href="#contact" class="btn btn-primary pulse">
+          <a href="#contact" class="btn btn-primary pulse" rel="noopener">
             <i class="fas fa-rocket"></i> Start Your Project
           </a>
-          <a href="#services" class="btn btn-secondary">
+          <a href="#services" class="btn btn-secondary" rel="noopener">
             <i class="fas fa-briefcase"></i> View Services
           </a>
         </div>
@@ -525,11 +775,12 @@
             class="project-thumb"
             href="https://career-forge-theta.vercel.app/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/careerforge-card.svg"
               alt="CareerForge project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -550,7 +801,7 @@
                 class="project-icon-link live"
                 href="https://career-forge-theta.vercel.app/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Open CareerForge live site"
               >
                 <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
@@ -560,7 +811,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/CareerForge"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View CareerForge repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -576,11 +827,12 @@
             class="project-thumb"
             href="https://codalyst.live"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/codalyst-card.svg"
               alt="Codalyst project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -601,7 +853,7 @@
                 class="project-icon-link live"
                 href="https://codalyst.live"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Open Codalyst live site"
               >
                 <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
@@ -611,7 +863,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Codalyst"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View Codalyst repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -627,11 +879,12 @@
             class="project-thumb"
             href="https://www.dreamdo.dev"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/dreamdo-card.svg"
               alt="DreamDo project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -653,7 +906,7 @@
                 class="project-icon-link live"
                 href="https://www.dreamdo.dev"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Open DreamDo live app"
               >
                 <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
@@ -663,7 +916,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/DreamDo"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View DreamDo repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -679,11 +932,12 @@
             class="project-thumb"
             href="https://chat-bot-front-02jr.onrender.com/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/chatbot-card.svg"
               alt="AI Chat-Bot project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -704,7 +958,7 @@
                 class="project-icon-link live"
                 href="https://chat-bot-front-02jr.onrender.com/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Open AI Chat-Bot live app"
               >
                 <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
@@ -714,7 +968,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Chat-Bot"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View AI Chat-Bot repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -730,11 +984,12 @@
             class="project-thumb"
             href="https://github.com/Abhish3k-Yadav/Vidyut-Bill"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/vidyut-bill-card.svg"
               alt="Vidyut Bill project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -753,14 +1008,10 @@
             </div>
             <div class="project-actions">
               <a
-<<<<<<< HEAD
-                href="https://github.com/Abhish3k-Yadav/VidyutBill"
-=======
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Vidyut-Bill"
->>>>>>> 9d90df6 (Update)
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View Vidyut Bill repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -780,11 +1031,12 @@
             class="project-thumb project-thumb--superdash"
             href="https://github.com/Abhish3k-Yadav/Super-Dash"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/super-dash-card.svg"
               alt="Super Dash project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -805,7 +1057,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Super-Dash"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View Super Dash repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -821,11 +1073,12 @@
             class="project-thumb"
             href="https://simon-says-rose.vercel.app"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/simon-says-card.svg"
               alt="Simon Says project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -846,7 +1099,7 @@
                 class="project-icon-link live"
                 href="https://simon-says-rose.vercel.app"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Open Simon Says live game"
               >
                 <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
@@ -856,7 +1109,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Simon-Says"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View Simon Says repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -872,11 +1125,12 @@
             class="project-thumb"
             href="https://github.com/Abhish3k-Yadav/LoginDB"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/logindb-card.svg"
               alt="LoginDB project preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -897,7 +1151,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/LoginDB"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View LoginDB repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -913,11 +1167,12 @@
             class="project-thumb"
             href="https://www.abhishekyadav.me"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               src="./assets/project/portfolio-card.svg"
               alt="Portfolio website preview"
+              loading="lazy"
             />
           </a>
           <div class="project-info">
@@ -938,7 +1193,7 @@
                 class="project-icon-link live"
                 href="https://www.abhishekyadav.me"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Open portfolio live site"
               >
                 <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
@@ -948,7 +1203,7 @@
                 class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Portfolio-Abhishek"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="View portfolio repository on GitHub"
               >
                 <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
@@ -968,6 +1223,7 @@
             <img
               src="./assets/project/future-projects-card.svg"
               alt="Future projects teaser"
+              loading="lazy"
             />
           </div>
           <div class="project-info">
@@ -998,6 +1254,7 @@
             href="https://github.com/Abhish3k-Yadav"
             class="btn btn-secondary"
             target="_blank"
+            rel="noopener"
             >View All on GitHub <i class="fas fa-arrow-right"></i
           ></a>
         </div>
@@ -1030,6 +1287,7 @@
             <a
               href="https://www.linkedin.com/in/abhishek-yadav-54974a333"
               target="_blank"
+              rel="noopener"
               >View Profile</a
             >
           </div>
@@ -1038,7 +1296,10 @@
             <i class="fab fa-github"></i>
             <h3>GitHub</h3>
             <p>Check out my code repositories</p>
-            <a href="https://github.com/Abhish3k-Yadav" target="_blank"
+            <a
+              href="https://github.com/Abhish3k-Yadav"
+              target="_blank"
+              rel="noopener"
               >View Projects</a
             >
           </div>
@@ -1111,13 +1372,29 @@
           <a
             href="https://www.linkedin.com/in/abhishek-yadav-54974a333"
             target="_blank"
-            ><img src="./assets/linkedin-icon.svg" alt="LinkedIn"
+            rel="noopener"
+            ><img
+              src="./assets/linkedin-icon.svg"
+              alt="LinkedIn"
+              width="22"
+              height="22"
           /></a>
-          <a href="https://github.com/Abhish3k-Yadav" target="_blank"
-            ><img src="./assets/github-icon.svg" alt="GitHub"
+          <a
+            href="https://github.com/Abhish3k-Yadav"
+            target="_blank"
+            rel="noopener"
+            ><img
+              src="./assets/github-icon.svg"
+              alt="GitHub"
+              width="22"
+              height="22"
           /></a>
           <a href="mailto:abhish3kkyadav@gmail.com"
-            ><img src="./assets/hashnode-icon.svg" alt="Email"
+            ><img
+              src="./assets/hashnode-icon.svg"
+              alt="Email"
+              width="22"
+              height="22"
           /></a>
         </div>
         <p>
@@ -1127,7 +1404,16 @@
       </div>
     </footer>
     <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.min.js" defer></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('sw.js')
+            .catch((e) => console.debug('SW registration failed', e));
+        });
+      }
+    </script>
   </body>
 </html>

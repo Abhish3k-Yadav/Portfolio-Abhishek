@@ -11,6 +11,7 @@ A modern, responsive portfolio website showcasing my skills as a Software Develo
 ## ✨ Features
 
 ### 🎨 **Design & UI**
+
 - **Responsive Design** - Optimized for all devices (mobile, tablet, desktop)
 - **Dark/Light Theme** - Toggle between professional themes with smooth animations
 - **Modern Gradient Backgrounds** - Professional color schemes with dynamic effects
@@ -18,6 +19,7 @@ A modern, responsive portfolio website showcasing my skills as a Software Develo
 - **Professional Typography** - Clean Raleway font family throughout
 
 ### 🌟 **Sections**
+
 - **Hero Section** - Animated profile image with bouncing effect
 - **About Me** - Professional introduction with statistics cards
 - **Skills & Technologies** - Organized skill categories with interactive tags
@@ -25,12 +27,14 @@ A modern, responsive portfolio website showcasing my skills as a Software Develo
 - **Contact Section** - Multiple contact methods and functional form
 
 ### 📱 **Interactive Elements**
+
 - **Hamburger Menu** - Mobile-responsive navigation
 - **Smooth Scrolling** - Navigation links with smooth scroll behavior
 - **Card Hover Effects** - Enhanced user interaction with visual feedback
 - **Loading States** - Professional loading indicators for form submission
 
 ### 📧 **Contact Form**
+
 - **EmailJS Integration** - Real email sending functionality
 - **Form Validation** - Client-side validation with error handling
 - **Success/Error Messages** - Visual feedback with animations
@@ -40,6 +44,7 @@ A modern, responsive portfolio website showcasing my skills as a Software Develo
 ## 🛠️ **Technologies Used**
 
 ### **Frontend**
+
 - **HTML5** - Semantic markup and structure
 - **CSS3** - Advanced styling with Grid, Flexbox, and animations
 - **JavaScript (ES6+)** - Interactive functionality and DOM manipulation
@@ -47,10 +52,12 @@ A modern, responsive portfolio website showcasing my skills as a Software Develo
 - **Google Fonts** - Raleway font family
 
 ### **External Services**
+
 - **EmailJS** - Email service integration for contact form
 - **CDN Resources** - Font Awesome icons and EmailJS library
 
 ### **Development Features**
+
 - **CSS Variables** - Dynamic theming system
 - **CSS Grid & Flexbox** - Modern layout techniques
 - **LocalStorage API** - Theme preference persistence
@@ -58,7 +65,7 @@ A modern, responsive portfolio website showcasing my skills as a Software Develo
 
 ## 📂 **Project Structure**
 
-```
+```text
 Abhishek-Portfolio/
 ├── index.html              # Main HTML file
 ├── style.css               # Main stylesheet with themes
@@ -90,13 +97,16 @@ Abhishek-Portfolio/
 ## 🚀 **Getting Started**
 
 ### **Quick Start**
+
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Abhish3k-Yadav/Abhishek-Portfolio.git
    cd Abhishek-Portfolio
    ```
 
 2. **Open in browser**
+
    ```bash
    # Simply open index.html in your preferred browser
    open index.html
@@ -117,9 +127,10 @@ To enable the contact form functionality:
    - Create a free account
 
 2. **Configure EmailJS**
-   - Follow the detailed guide in `EmailJS_Setup_Guide.md`
-   - Update the configuration in `script.js`:
-     ```javascript
+    - Follow the detailed guide in `EmailJS_Setup_Guide.md`
+    - Update the configuration in `script.js`:
+
+       ```javascript
      emailjs.init("YOUR_PUBLIC_KEY");
      // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID
      ```
@@ -131,6 +142,10 @@ To enable the contact form functionality:
 - ✅ **Efficient CSS** - Consolidated styling for better performance
 - ✅ **Minimal Dependencies** - Only essential external resources
 - ✅ **Fast Loading** - Optimized images and efficient code structure
+ - ✅ **Critical CSS** - Inlined essential above-the-fold styles for faster First Paint
+ - ✅ **Deferred Scripts** - Non-essential JS loaded with `defer` and idle callbacks
+ - ✅ **Lazy Media** - Images below the fold use `loading="lazy"` & `decoding="async"`
+ - ✅ **Typewriter Accessibility** - Respects `prefers-reduced-motion`
 
 ### **Accessibility Features**
 - ✅ **Semantic HTML** - Proper heading hierarchy and structure
@@ -149,6 +164,114 @@ To enable the contact form functionality:
 **[View Live Portfolio →](https://www.abhishekyadav.me/)**
 
 *Replace with your actual deployment URL*
+
+## 📏 Performance Budget
+
+Establishing a lightweight performance budget helps keep future changes aligned with speed goals.
+
+| Metric | Target (Mobile 4G) | Notes |
+| ------ | ------------------ | ----- |
+| LCP (Largest Contentful Paint) | < 2.4s | Hero heading / profile image should load quickly. Consider converting `profile-image.png` to WebP/AVIF. |
+| FID / INP (Interaction) | < 100ms | Minimal JS on first interaction; heavy logic deferred. |
+| CLS (Cumulative Layout Shift) | < 0.03 | Width/height attributes for images to avoid shifts. |
+| Total JS (uncompressed) | < 45KB | Current `script.min.js` well below; keep future additions modular. |
+| Total Images (initial) | < 300KB | Above-the-fold assets only; convert PNG/SVG to optimized formats. |
+| First Byte (TTFB) | < 0.8s | Hosting/CDN dependent. |
+
+### Budget Enforcement Checklist
+- [x] Inline critical CSS
+- [x] Defer non-critical scripts (`defer`, `requestIdleCallback`)
+- [x] Lazy load offscreen images
+- [ ] Convert PNG hero/profile to WebP or AVIF
+- [ ] Add `<picture>` sources for modern formats
+- [x] Use `font-display: swap` to avoid FOIT
+- [x] Preconnect to font origins
+- [ ] Periodic Lighthouse audits (monthly)
+
+### Suggested Next Optimizations
+1. Generate WebP/AVIF variants for all PNG project cards and hero image.
+2. Add `<picture>` wrappers with fallback `<img>` for cross-browser support.
+3. Consider self-hosting fonts to reduce DNS + SSL negotiation.
+4. Split JS into smaller modules if new features exceed JS budget.
+5. Add a lightweight service worker for asset caching (optional).
+
+### How to Measure
+Run a Lighthouse report (Chrome DevTools) or use:
+```bash
+# Mac / Linux
+google-chrome --headless --disable-gpu --crash-test https://www.abhishekyadav.me
+```
+Or use WebPageTest.org / PageSpeed Insights for broader network simulation.
+
+## 🔍 Monitoring Commands (Optional)
+```bash
+# Count JS file size
+wc -c script.min.js
+
+# Estimate gzip size (Mac/Linux)
+gzip -c script.min.js | wc -c
+
+# List image dimensions for quick audit (requires ImageMagick)
+identify -format "%f %wx%h\n" assets/project/*.png
+```
+
+---
+
+## 🖼️ Modern image formats (WebP/AVIF)
+
+You can safely drop in modern formats without breaking the site. The hero image is already wrapped in a `<picture>` with commented placeholders in `index.html`. When you generate new assets, just uncomment the sources:
+
+```html
+<picture>
+   <source srcset="assets/profile-image.avif" type="image/avif" />
+   <source srcset="assets/profile-image.webp" type="image/webp" />
+   <img src="assets/profile-image.png" alt="Abhishek Yadav - Software Developer" width="220" height="220" />
+   <!-- PNG remains as a reliable fallback -->
+   <!-- Keep width/height to preserve aspect ratio and reduce CLS -->
+   <!-- `decoding=async` and `fetchpriority=high` are already included in HTML -->
+   <!-- Consider also preloading the AVIF/WebP once available -->
+   <!-- <link rel="preload" as="image" href="assets/profile-image.avif" imagesrcset="assets/profile-image.avif" /> -->
+   <!-- <link rel="preload" as="image" href="assets/profile-image.webp" imagesrcset="assets/profile-image.webp" /> -->
+</picture>
+```
+
+### Convert images on Windows (PowerShell)
+
+Option A: Using ImageMagick (install from imagemagick.org)
+
+```powershell
+# Convert PNG to WebP
+magick assets/profile-image.png -quality 82 assets/profile-image.webp
+
+# Convert PNG to AVIF (requires ImageMagick built with libheif)
+magick assets/profile-image.png -quality 45 assets/profile-image.avif
+```
+
+Option B: Using Google WebP tools + libavif encoders
+
+```powershell
+# WebP (cwebp): https://developers.google.com/speed/webp/docs/precompiled
+cwebp assets/profile-image.png -q 82 -o assets/profile-image.webp
+
+# AVIF (avifenc): https://github.com/AOMediaCodec/libavif/releases
+avifenc --min 25 --max 45 --speed 6 assets/profile-image.png assets/profile-image.avif
+```
+
+Batch convert project images (adjust paths/extensions as needed):
+
+```powershell
+# WebP all PNGs in assets/project
+Get-ChildItem assets/project -Filter *.png | ForEach-Object {
+   $out = $_.FullName -replace ".png$", ".webp"; cwebp $_.FullName -q 82 -o $out
+}
+
+# AVIF all PNGs in assets/project
+Get-ChildItem assets/project -Filter *.png | ForEach-Object {
+   $out = $_.FullName -replace ".png$", ".avif"; avifenc --min 25 --max 45 --speed 6 $_.FullName $out
+}
+```
+
+Tip: Keep the PNG fallback until you verify quality and browser coverage. AVIF first, WebP second, PNG last.
 
 ## 📊 **Browser Support**
 

@@ -4,7 +4,7 @@
    * Cards and sections
 */
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+/* Google Fonts moved to HTML with preconnect + display=swap for better performance */
 
 /* variables */
 :root {
@@ -98,6 +98,8 @@ body::before {
   backdrop-filter: var(--glass-blur);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.45s ease, border-color 0.45s ease;
+  will-change: transform, box-shadow, border-color;
+  transform: translateZ(0);
 }
 
 .card:hover {
@@ -116,6 +118,8 @@ body::before {
   backdrop-filter: var(--glass-blur);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.45s ease, border-color 0.45s ease;
+  will-change: transform, box-shadow, border-color;
+  transform: translateZ(0);
 }
 
 .stat:hover,
@@ -134,6 +138,8 @@ body::before {
   border: none;
   position: relative;
   overflow: hidden;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .btn-primary::after {
@@ -161,6 +167,8 @@ body::before {
   font-weight: var(--weight-semibold);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   box-shadow: 0 12px 25px rgba(15, 23, 42, 0.05);
+  will-change: transform, box-shadow, border-color;
+  transform: translateZ(0);
 }
 
 .skill-item:hover {
@@ -464,6 +472,59 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global font smoothing only (removed blanket 3D transforms to reduce layer count & memory) */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Targeted GPU hint utility (apply only where needed instead of * selector) */
+.gpu,
+.floating-avatar,
+.orb,
+.gradient-ring,
+.project .card,
+.hero-stat,
+.service-card,
+.skill-category,
+.project-icon-link,
+.project-action,
+.profile-portrait,
+.profile-image {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Fluid type scale */
+:root {
+  --font-size-base: clamp(0.95rem, 0.85rem + 0.6vw, 1.05rem);
+  --font-size-h1: clamp(2.2rem, 1.8rem + 4.5vw, 3.8rem);
+  --font-size-h2: clamp(1.8rem, 1.4rem + 3vw, 2.8rem);
+  --font-size-hero-desc: clamp(1rem, 0.9rem + 0.9vw, 1.25rem);
+}
+
+body,
+p,
+li,
+a,
+button,
+input,
+textarea {
+  font-size: var(--font-size-base);
+}
+
+.header-container h1 {
+  font-size: var(--font-size-h1);
+}
+
+.content-text h2 {
+  font-size: var(--font-size-h2);
+}
+
+.hero-description {
+  font-size: var(--font-size-hero-desc);
+}
+
 /* Reset default styling */
 * {
   margin: 0;
@@ -506,6 +567,8 @@ body {
   left: 0;
   right: 0;
   z-index: 20;
+  will-change: background, box-shadow;
+  transform: translateZ(0);
 }
 
 .navbar .container {
@@ -589,10 +652,13 @@ body {
   box-shadow: 0 35px 90px rgba(var(--primary-rgb), 0.25);
   backdrop-filter: blur(6px);
   transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+  will-change: transform, box-shadow, border-color;
+  transform: translateZ(0);
 }
 
 .floating-avatar {
   animation: floatOrbit 7s ease-in-out infinite;
+  will-change: transform, box-shadow;
 }
 
 .floating-avatar:hover {
@@ -658,12 +724,12 @@ body {
   border: 1px solid rgba(var(--primary-rgb), 0.18);
   border-radius: clamp(18px, 1.8vw, 26px);
   box-shadow: var(--shadow);
-  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease, filter 0.45s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, filter 0.35s ease;
   opacity: 0;
   will-change: transform, box-shadow;
   transform: translate3d(0, 32px, 0);
   filter: none;
-  animation: projectCardReveal 0.85s cubic-bezier(0.17, 0.99, 0.38, 1.01) forwards;
+  animation: projectCardReveal 0.65s cubic-bezier(0.17, 0.99, 0.38, 1.01) forwards;
   animation-delay: calc(var(--card-seq, 0) * 0.12s);
 }
 
@@ -747,7 +813,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.35s ease;
 }
 
 .project .card:hover .project-thumb img {
@@ -766,6 +832,7 @@ body {
   backdrop-filter: blur(2px);
   transform: translateY(0);
   transition: transform 0.35s ease;
+  will-change: transform;
 }
 
 .project-bio {
@@ -835,6 +902,7 @@ body {
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 .project-thumb--superdash img {
@@ -885,6 +953,7 @@ body {
   background: rgba(248, 250, 252, 0.95);
   box-shadow: 0 16px 42px rgba(15, 23, 42, 0.14);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform, box-shadow;
 }
 
 .project-icon-link img {
@@ -924,6 +993,7 @@ body {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   box-shadow: 0 18px 40px rgba(var(--primary-rgb), 0.28);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform, box-shadow;
 }
 
 .project-action:hover {
@@ -1158,6 +1228,7 @@ body {
   border-radius: 22px;
   overflow: hidden;
   z-index: 0;
+  will-change: transform, box-shadow;
 }
 
 .skill-category::before {
@@ -1427,6 +1498,7 @@ body {
   margin: 0 auto;
   padding: clamp(4rem, 8vw, 6.5rem) var(--section-gutter) clamp(3.5rem, 6vw, 5.5rem);
   overflow: hidden;
+  container-type: inline-size;
 }
 
 .hero-decor {
@@ -1517,6 +1589,75 @@ body {
   }
 }
 
+/* Hide heavy decorative elements & reduce effects on very small screens for performance */
+@media (max-width: 560px) {
+
+  .orb,
+  .gradient-ring,
+  .hero-tech-pattern,
+  .hero-decor {
+    display: none !important;
+  }
+
+  .profile-portrait {
+    box-shadow: 0 25px 60px rgba(var(--primary-rgb), 0.28);
+    backdrop-filter: none;
+  }
+
+  .profile-image {
+    box-shadow: 0 30px 70px rgba(var(--primary-rgb), 0.25);
+  }
+
+  .hero-description {
+    line-height: 1.6;
+  }
+}
+
+/* Lighten visual weight & disable expensive backdrop-filter on mobile */
+@media (max-width: 600px) {
+
+  .card,
+  .stat,
+  .skill-category,
+  .contact-item,
+  .contact-form,
+  .hero-stat,
+  .service-card,
+  .pricing-card,
+  .project .card {
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.18);
+    backdrop-filter: none;
+  }
+}
+
+/* Landscape short viewport adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  #hero {
+    min-height: 100vh;
+    padding-top: 90px;
+  }
+
+  .header-container {
+    padding: clamp(2rem, 4vw, 3rem) var(--section-gutter) clamp(2rem, 4vw, 3rem);
+  }
+
+  .hero-stats {
+    margin-top: 2rem;
+  }
+}
+
+/* Container query for hero text refinement */
+@container (max-width: 680px) {
+  .hero-description {
+    font-size: clamp(0.95rem, 0.9rem + 0.8vw, 1.15rem);
+  }
+
+  .hero-trust span {
+    padding: 0.7rem 1.1rem;
+    font-size: 0.75rem;
+  }
+}
+
 .orb {
   position: absolute;
   display: block;
@@ -1525,6 +1666,7 @@ body {
   opacity: 0.75;
   mix-blend-mode: screen;
   animation: orbFloat 12s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .profile-portrait {
@@ -1539,6 +1681,8 @@ body {
   overflow: hidden;
   backdrop-filter: blur(14px);
   isolation: isolate;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .portrait-outline {
@@ -1549,6 +1693,8 @@ body {
   box-shadow: inset 0 0 30px rgba(var(--secondary-rgb), 0.18);
   animation: portraitPulse 9s ease-in-out infinite;
   pointer-events: none;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .profile-portrait::after {
@@ -1594,6 +1740,7 @@ body {
   position: relative;
   z-index: 1;
   width: clamp(180px, 24vw, 220px);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: 6px solid rgba(var(--bg-primary-soft-rgb, 238, 244, 255), 0.85);
   box-shadow: 0 45px 120px rgba(var(--primary-rgb), 0.3);
@@ -1644,6 +1791,8 @@ body {
   border: 1px solid rgba(var(--secondary-rgb), 0.35);
   opacity: 0.6;
   animation: ringSpin 18s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .gradient-ring-1 {
@@ -1715,11 +1864,11 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 0.7rem + 0.9vw, 1.1rem);
   font-weight: var(--weight-semibold);
   margin-bottom: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.4rem;
+  letter-spacing: clamp(0.15rem, 0.2rem + 0.5vw, 0.4rem);
   color: transparent;
   background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.8), rgba(var(--secondary-rgb), 0.8));
   -webkit-background-clip: text;
@@ -1749,11 +1898,10 @@ body {
 }
 
 .hero-description {
-  font-size: 1.25rem;
-  line-height: 1.9;
-  margin: 2.5rem auto 0;
+  line-height: 1.75;
+  margin: 2rem auto 0;
   color: var(--text-color-muted);
-  max-width: 860px;
+  max-width: clamp(580px, 72vw, 860px);
 }
 
 .hero-cta {
@@ -1824,6 +1972,7 @@ body {
   backdrop-filter: blur(16px);
   box-shadow: 0 25px 55px rgba(15, 23, 42, 0.12);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform, box-shadow;
 }
 
 .hero-stat:hover {
@@ -1875,6 +2024,8 @@ body {
   backdrop-filter: blur(14px);
   animation: badgeGlow 4.5s ease-in-out infinite;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .hero-trust span::after {
@@ -1905,6 +2056,8 @@ body {
   font-size: 0.9rem;
   box-shadow: 0 10px 22px rgba(var(--primary-rgb), 0.28);
   animation: iconPulse 3.4s ease-in-out infinite;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 @keyframes badgeGlow {
@@ -1981,6 +2134,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+  will-change: transform, box-shadow, border-color;
 }
 
 .service-card.featured {
@@ -2074,11 +2228,9 @@ body {
   gap: 0.75rem;
 }
 
-.service-features li::before {
-  content: '✓';
+.service-features li i {
   color: var(--primary-color);
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .service-btn {
@@ -2224,12 +2376,35 @@ body {
   border-bottom: none;
 }
 
-.pricing-features li::before {
-  content: '✓';
+.pricing-features li i {
   color: var(--primary-color);
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1rem;
   flex-shrink: 0;
+}
+
+.pricing-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
+  background: var(--primary-color);
+  color: var(--text-color-two);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: var(--weight-semibold);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pricing-btn:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(var(--primary-rgb), 0.3);
+}
+
+.pricing-card.featured .pricing-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 18px 40px rgba(var(--primary-rgb), 0.35);
 }
 
 /* ==================== ENHANCED ABOUT SECTION ==================== */
@@ -2420,6 +2595,14 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .floating-avatar,
+  .orb,
+  .gradient-ring,
+  .portrait-outline,
+  .project-thumb::after {
+    animation: none !important;
   }
 }
 

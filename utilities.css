@@ -67,6 +67,7 @@ h2::selection {
   font-weight: var(--weight-semibold);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
+  will-change: transform, box-shadow;
 }
 
 .btn i {
