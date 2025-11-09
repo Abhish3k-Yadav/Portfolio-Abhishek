@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Abhishek Yadav Logo Mark</title>
+  <desc id="desc">Gradient briefcase and profile badge, theme-adaptive with smooth transitions.</desc>
+  <defs>
+    <style>
+      @media (prefers-color-scheme: light) {
+        .logo-body { stroke: url(#body-light); }
+        .logo-badge { stroke: url(#badge-light); }
+        .logo-icon { stroke: url(#badge-light); }
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-body { stroke: url(#body-dark); }
+        .logo-badge { stroke: url(#badge-dark); }
+        .logo-icon { stroke: url(#badge-dark); }
+      }
+    </style>
+    <linearGradient id="body-light" x1="12" y1="14" x2="52" y2="50">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="50%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="body-dark" x1="12" y1="14" x2="52" y2="50">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#38e2ff" />
+    </linearGradient>
+    <linearGradient id="badge-light" x1="32" y1="20" x2="52" y2="44">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="badge-dark" x1="32" y1="20" x2="52" y2="44">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="50%" stop-color="#38e2ff" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="logo-body" d="M18 18h20l6 6v20c0 3.3-2.7 6-6 6H18c-3.3 0-6-2.7-6-6V24c0-3.3 2.7-6 6-6z" stroke-width="4" />
+    <path class="logo-body" d="M26 12h8c1.7 0 3 1.3 3 3v3" stroke-width="4" />
+    <path class="logo-badge" d="M34 32l14-6v20c0 3.3-2.7 6-6 6H28" stroke-width="4" />
+    <circle class="logo-icon" cx="44" cy="34" r="4" stroke-width="3.5" />
+    <path class="logo-icon" d="M48 44c-1.3-2.2-2.8-3.2-4-3.2s-2.7 1-4 3.2" stroke-width="3.5" />
+  </g>
+  <style>
+    @keyframes logoFlow {
+      0%, 100% { filter: brightness(1) saturate(1); }
+      50% { filter: brightness(1.15) saturate(1.1); }
+    }
+    svg { animation: logoFlow 4s ease-in-out infinite; }
+  </style>
+</svg>

@@ -166,3 +166,106 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// ==================== AOS ANIMATION INITIALIZATION ====================
+// Initialize AOS (Animate On Scroll) library
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100,
+      delay: 50,
+    });
+  }
+});
+
+// ==================== COUNTER ANIMATION ====================
+// Animate numbers for stats/counters
+const counters = document.querySelectorAll('.counter');
+const animationDuration = 2000; // 2 seconds
+
+const animateCounter = (counter) => {
+  const target = parseInt(counter.getAttribute('data-target'));
+  const increment = target / (animationDuration / 16); // 60 FPS
+  let current = 0;
+
+  const updateCounter = () => {
+    current += increment;
+    if (current < target) {
+      counter.textContent = Math.ceil(current) + '+';
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.textContent = target + '+';
+    }
+  };
+
+  updateCounter();
+};
+
+// Intersection Observer for counter animation
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        animateCounter(counter);
+        counterObserver.unobserve(counter); // Animate only once
+      }
+    });
+  },
+  {
+    threshold: 0.5, // Trigger when 50% visible
+  }
+);
+
+// Observe all counters
+counters.forEach((counter) => {
+  counterObserver.observe(counter);
+});
+
+// ==================== SCROLL TO TOP BUTTON ====================
+// Create and add scroll to top button
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+scrollTopBtn.className = 'scroll-top-btn';
+scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+document.body.appendChild(scrollTopBtn);
+
+// Show/hide scroll to top button
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+});
+
+// Scroll to top on click
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
+
+// ==================== TYPING ANIMATION FOR HERO ====================
+// Add typing effect to hero subtitle (optional enhancement)
+const heroSubtitle = document.querySelector('.hero-subtitle');
+if (heroSubtitle) {
+  const originalText = heroSubtitle.textContent;
+  heroSubtitle.textContent = '';
+  let i = 0;
+
+  function typeWriter() {
+    if (i < originalText.length) {
+      heroSubtitle.textContent += originalText.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  // Start typing animation after page loads
+  setTimeout(typeWriter, 500);
+}

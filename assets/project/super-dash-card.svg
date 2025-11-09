@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Super Dash Gameplay</title>
+  <desc id="desc">Arcade skyline with a caped hero dashing through drones, inspired by the Super Dash project.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="45%" stop-color="#3730a3" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="cape" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#sky)" />
+  <g opacity="0.4" fill="#1e293b">
+    <rect x="32" y="340" width="40" height="112" />
+    <rect x="86" y="316" width="52" height="136" />
+    <rect x="154" y="300" width="64" height="152" />
+    <rect x="234" y="332" width="52" height="120" />
+    <rect x="302" y="288" width="60" height="164" />
+    <rect x="372" y="324" width="48" height="128" />
+    <rect x="434" y="348" width="38" height="104" />
+  </g>
+  <g opacity="0.18" fill="#a855f7">
+    <circle cx="86" cy="148" r="36" />
+    <circle cx="168" cy="110" r="24" />
+    <circle cx="392" cy="96" r="42" />
+  </g>
+  <g transform="translate(118 212)">
+    <path d="M122 52c0-26 20-46 46-46 18 0 33 11 40 25l44 84-50 12-30-48-14 20c-5 7-14 9-22 5l-10-5c-2-1-4-3-5-5l-15-27c-2-4 0-8 4-10l8-3c2-1 4-1 6 0l6 3v-5z" fill="#0f172a" opacity="0.95" />
+    <path d="M152 4c22 0 46 18 46 44 0 20-14 36-32 42l-8 2c-3 1-6 0-8-2l-15-17c-2-2-3-6-1-9 6-10 16-31 18-42 1-7 0-12-2-18-1-3 1-6 4-7 3-1 6-1 8 0z" fill="url(#cape)" />
+  </g>
+  <g transform="translate(320 190)">
+    <rect x="26" y="-10" width="78" height="52" rx="18" fill="#1f2937" opacity="0.85" />
+    <rect x="0" y="0" width="54" height="36" rx="12" fill="#0ea5e9" />
+    <circle cx="46" cy="18" r="6" fill="#facc15" />
+    <rect x="-54" y="14" width="50" height="12" rx="6" fill="#0ea5e9" />
+  </g>
+  <path d="M252 274l120-34" fill="none" stroke="url(#beam)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" />
+  <g transform="translate(272 236) rotate(-12)">
+    <rect x="-10" y="-8" width="56" height="32" rx="12" fill="#bae6fd" opacity="0.7" />
+    <rect x="-2" y="-4" width="40" height="24" rx="10" fill="#0369a1" />
+    <circle cx="16" cy="8" r="4" fill="#f8fafc" />
+    <circle cx="24" cy="8" r="4" fill="#f8fafc" />
+  </g>
+  <g transform="translate(64 84)">
+    <rect width="112" height="48" rx="14" fill="rgba(15,23,42,0.72)" />
+    <text x="16" y="30" font-family="'Fira Code', 'Courier New', monospace" font-size="22" fill="#f8fafc">score 1280</text>
+  </g>
+  <g transform="translate(360 82)">
+    <rect width="76" height="40" rx="12" fill="rgba(15,23,42,0.72)" />
+    <text x="18" y="26" font-family="'Fira Code', 'Courier New', monospace" font-size="18" fill="#f8fafc">x3</text>
+  </g>
+  <path d="M60 392h392" stroke="#0f172a" stroke-width="12" stroke-linecap="round" opacity="0.42" />
+</svg>

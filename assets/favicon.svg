@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Abhishek Yadav Icon</title>
+  <desc id="desc">Aurora-inspired favicon featuring a refined AY monogram with subtle glow for light and dark themes.</desc>
+  <defs>
+    <style>
+      @media (prefers-color-scheme: light) {
+        .bg { fill: url(#bg-light); }
+        .ring { stroke: url(#ring-light); }
+        .glyph-primary { fill: url(#glyph-light); }
+        .glyph-secondary { fill: url(#secondary-light); }
+        .halo { fill: url(#halo-light); opacity: 0.42; }
+      }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: url(#bg-dark); }
+        .ring { stroke: url(#ring-dark); }
+        .glyph-primary { fill: url(#glyph-dark); }
+        .glyph-secondary { fill: url(#secondary-dark); }
+        .halo { fill: url(#halo-dark); opacity: 0.58; }
+      }
+    </style>
+    <radialGradient id="bg-light" cx="26" cy="16" r="40">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#eef2ff" />
+      <stop offset="100%" stop-color="#d7e3ff" />
+    </radialGradient>
+    <radialGradient id="bg-dark" cx="26" cy="18" r="40">
+      <stop offset="0%" stop-color="#0c1326" />
+      <stop offset="100%" stop-color="#050710" />
+    </radialGradient>
+    <linearGradient id="ring-light" x1="14" y1="12" x2="50" y2="52">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="45%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <linearGradient id="ring-dark" x1="14" y1="12" x2="50" y2="52">
+      <stop offset="0%" stop-color="#38e2ff" />
+      <stop offset="45%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#facc15" />
+    </linearGradient>
+    <radialGradient id="halo-light" cx="32" cy="24" r="24">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.32" />
+      <stop offset="70%" stop-color="#7c3aed" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="halo-dark" cx="32" cy="24" r="24">
+      <stop offset="0%" stop-color="#38e2ff" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="glyph-light" x1="22" y1="18" x2="46" y2="46">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="55%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <linearGradient id="glyph-dark" x1="22" y1="18" x2="46" y2="46">
+      <stop offset="0%" stop-color="#38e2ff" />
+      <stop offset="55%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#facc15" />
+    </linearGradient>
+    <linearGradient id="secondary-light" x1="24" y1="32" x2="40" y2="48">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="secondary-dark" x1="24" y1="32" x2="40" y2="48">
+      <stop offset="0%" stop-color="#38e2ff" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="soft-glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="30" class="bg" />
+  <circle cx="32" cy="30" r="22" class="halo" filter="url(#soft-glow)" />
+  <circle cx="32" cy="32" r="28.2" fill="none" stroke-width="2.6" class="ring" />
+  <g transform="translate(8 6) scale(1.2)">
+    <path
+      class="glyph-primary"
+      d="M20.2 6l11.2 27.5h-8.5l-2.1-5.4H10l-2.1 5.4H-0.4L10.8 6h9.4zm-7.4 16.2h6.9l-3.4-8.5-3.5 8.5z"
+    />
+    <path
+      class="glyph-secondary"
+      d="M25.6 20.6l6.4 12.9h-6.2l-3.3-6.4 3.1-6.5z"
+    />
+  </g>
+  <circle cx="34.6" cy="16.8" r="3.4" fill="#ffffff" opacity="0.8" />
+  <style>
+    @keyframes ringDrift {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(1.8deg); }
+    }
+    @keyframes sheen {
+      0%, 100% { filter: drop-shadow(0 0 1.4px rgba(128, 208, 255, 0.25)); }
+      50% { filter: drop-shadow(0 0 2.6px rgba(126, 90, 255, 0.4)); }
+    }
+    .ring { transform-origin: 32px 32px; animation: ringDrift 7s ease-in-out infinite; }
+    .glyph-primary, .glyph-secondary { animation: sheen 6.5s ease-in-out infinite; }
+  </style>
+</svg>

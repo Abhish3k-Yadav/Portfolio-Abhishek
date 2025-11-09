@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Aurora Portfolio Website</title>
+  <desc id="desc">Aurora styled hero with navigation tabs and call to action representing the portfolio site.</desc>
+  <defs>
+    <linearGradient id="portfolioBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="portfolioCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(15, 23, 42, 0.92)" />
+      <stop offset="100%" stop-color="rgba(30, 41, 59, 0.92)" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="40" fill="url(#portfolioBg)" />
+  <g transform="translate(64 120)">
+    <rect width="384" height="252" rx="32" fill="url(#portfolioCard)" />
+    <g transform="translate(26 30)">
+      <rect width="80" height="26" rx="13" fill="#22d3ee" />
+      <rect x="92" width="80" height="26" rx="13" fill="#7c3aed" />
+      <rect x="184" width="80" height="26" rx="13" fill="#f97316" />
+    </g>
+    <g transform="translate(40 86)">
+      <rect width="180" height="12" rx="6" fill="#bae6fd" />
+      <rect x="0" y="24" width="220" height="12" rx="6" fill="#cbd5f5" />
+      <rect x="0" y="48" width="192" height="12" rx="6" fill="#a5b4fc" />
+      <rect x="0" y="72" width="240" height="12" rx="6" fill="#38bdf8" opacity="0.8" />
+    </g>
+    <g transform="translate(40 172)">
+      <rect width="136" height="42" rx="21" fill="#22d3ee" />
+      <rect x="156" width="136" height="42" rx="21" fill="#7c3aed" opacity="0.7" />
+    </g>
+    <g transform="translate(280 72)">
+      <circle cx="48" cy="48" r="48" fill="#22d3ee" opacity="0.25" />
+      <circle cx="48" cy="48" r="38" fill="#38bdf8" opacity="0.3" />
+      <circle cx="48" cy="48" r="28" fill="#7c3aed" opacity="0.4" />
+    </g>
+  </g>
+  <g transform="translate(160 390)">
+    <rect width="192" height="68" rx="22" fill="rgba(15, 23, 42, 0.72)" />
+    <rect x="20" y="22" width="72" height="24" rx="12" fill="#22d3ee" />
+    <rect x="100" y="22" width="72" height="24" rx="12" fill="#7c3aed" />
+  </g>
+</svg>

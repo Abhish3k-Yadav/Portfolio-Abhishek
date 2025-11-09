@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Vidyut Bill Desktop Suite</title>
+  <desc id="desc">Invoice layout and meter graphic illustrating the electricity billing application.</desc>
+  <defs>
+    <linearGradient id="vidyutBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#431407" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <linearGradient id="vidyutCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#fde68a" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="40" fill="url(#vidyutBg)" />
+  <g transform="translate(82 104)">
+    <rect width="348" height="288" rx="28" fill="url(#vidyutCard)" />
+    <rect x="28" y="30" width="112" height="26" rx="13" fill="#f97316" opacity="0.85" />
+    <rect x="28" y="80" width="228" height="12" rx="6" fill="#b45309" opacity="0.65" />
+    <rect x="28" y="112" width="208" height="12" rx="6" fill="#ea580c" opacity="0.65" />
+    <rect x="28" y="144" width="188" height="12" rx="6" fill="#2563eb" opacity="0.6" />
+    <rect x="28" y="176" width="272" height="12" rx="6" fill="#0ea5e9" opacity="0.6" />
+    <g transform="translate(224 30)">
+      <rect width="96" height="26" rx="13" fill="#fbbf24" opacity="0.7" />
+    </g>
+    <g transform="translate(236 200)">
+      <rect width="92" height="48" rx="14" fill="#f97316" opacity="0.75" />
+      <rect x="12" y="14" width="68" height="8" rx="4" fill="#fff7ed" />
+      <rect x="12" y="28" width="54" height="8" rx="4" fill="#fed7aa" />
+    </g>
+    <g transform="translate(40 214)" fill="#fed7aa">
+      <rect width="128" height="18" rx="9" />
+      <rect x="144" width="88" height="18" rx="9" />
+      <rect x="244" width="96" height="18" rx="9" />
+    </g>
+  </g>
+  <g transform="translate(140 380)">
+    <rect width="232" height="76" rx="28" fill="rgba(15, 23, 42, 0.7)" />
+    <rect x="22" y="22" width="92" height="32" rx="16" fill="#f97316" />
+    <rect x="126" y="28" width="74" height="20" rx="10" fill="#fbbf24" />
+  </g>
+  <g transform="translate(316 136)">
+    <circle cx="64" cy="64" r="60" fill="rgba(15, 23, 42, 0.2)" stroke="#fbbf24" stroke-width="6" />
+    <path d="M64 22v38l30 18" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="64" cy="64" r="10" fill="#f97316" />
+  </g>
+</svg>

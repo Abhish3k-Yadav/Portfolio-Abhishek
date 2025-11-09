@@ -14,7 +14,17 @@
     />
     <meta name="author" content="Abhishek Yadav" />
     <title>Abhishek Yadav | Software Developer Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/fav.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/favicon.svg?v=3"
+      sizes="any"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/svg+xml"
+      href="assets/favicon.svg?v=3"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -23,6 +33,8 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utilities.css" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- EmailJS SDK -->
     <script
       type="text/javascript"
@@ -38,13 +50,14 @@
           <h1 id="logo">
             <a href="https://github.com/Abhish3k-Yadav"
               ><img
-                src="./assets/logo.png"
+                src="./assets/logo.svg"
                 alt="Abhishek Yadav - Developer Portfolio"
             /></a>
           </h1>
           <!-- Navbar links -->
           <ul class="nav-menu">
             <li><a class="nav-link" href="#about">ABOUT</a></li>
+            <li><a class="nav-link" href="#services">SERVICES</a></li>
             <li><a class="nav-link" href="#skills">SKILLS</a></li>
             <li><a class="nav-link" href="#projects">PROJECTS</a></li>
             <li><a class="nav-link" href="#contact">CONTACT</a></li>
@@ -75,61 +88,318 @@
       </nav>
 
       <section class="header-container">
-        <img
-          class="profile-image"
-          src="assets/profile-image.png"
-          alt="Abhishek Yadav - Software Developer"
-        />
-        <h1>Hi I'm Abhishek</h1>
+        <div class="hero-decor" aria-hidden="true">
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+          <span class="orb orb-3"></span>
+          <span class="gradient-ring gradient-ring-1"></span>
+          <span class="gradient-ring gradient-ring-2"></span>
+        </div>
+        <div class="hero-tech-pattern" aria-hidden="true"></div>
+        <div
+          class="profile-portrait"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <span class="portrait-outline" aria-hidden="true"></span>
+          <img
+            class="profile-image floating-avatar"
+            src="assets/profile-image.png"
+            alt="Abhishek Yadav - Software Developer"
+          />
+        </div>
+        <h1 data-aos="fade-up" data-aos-delay="200">Hi, I'm Abhishek</h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+          Full-Stack Developer & UI/UX Designer
+        </p>
 
-        <div class="content-text">
-          <h2>Building digital</h2>
-          <h2>products, brands, and experience.</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="400">
+          <h2 class="gradient-text">Transforming Ideas Into</h2>
+          <h2 class="gradient-text">Stunning Digital Solutions</h2>
 
-          <p>
-            A Software Developer and Visual Designer with experience in web
-            design, brand identity and product design.
+          <p class="hero-description">
+            I craft high-performance web applications, intuitive user
+            interfaces, and complete digital solutions that help businesses
+            thrive online. From concept to deployment, I deliver excellence.
           </p>
         </div>
-        <a
-          href="https://www.linkedin.com/in/abhishek-yadav-54974a333"
-          class="btn btn-secondary"
-          target="_blank"
-          >Connect With Me</a
-        >
+
+        <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+          <a href="#contact" class="btn btn-primary pulse">
+            <i class="fas fa-rocket"></i> Start Your Project
+          </a>
+          <a href="#services" class="btn btn-secondary">
+            <i class="fas fa-briefcase"></i> View Services
+          </a>
+        </div>
+
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+          <div class="hero-stat">
+            <h3>9+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div class="hero-stat">
+            <h3>5+</h3>
+            <p>Client Satisfaction</p>
+          </div>
+          <div class="hero-stat">
+            <h3>24/7</h3>
+            <p>Support Available</p>
+          </div>
+        </div>
+        <div class="hero-trust" data-aos="fade-up" data-aos-delay="700">
+          <span><i class="fas fa-bolt"></i> Lightning-fast delivery</span>
+          <span><i class="fas fa-globe"></i> Global clients onboarded</span>
+          <span><i class="fas fa-shield-alt"></i> Reliable partnership</span>
+        </div>
       </section>
     </header>
 
     <!-- About Section -->
     <section id="about" class="about-container container">
       <div class="division"></div>
-      <div class="content-text">
+      <div class="content-text" data-aos="fade-up">
         <h2>About Me</h2>
         <p>
-          I'm Abhishek Yadav, a passionate Software Developer and Visual
-          Designer with a strong foundation in modern web technologies. I
-          specialize in creating intuitive user interfaces and robust backend
-          systems that deliver exceptional user experiences.
+          I'm Abhishek Yadav, a passionate
+          <span class="highlight">Full-Stack Developer</span> and
+          <span class="highlight">Visual Designer</span> specializing in
+          creating exceptional digital experiences. With a strong foundation in
+          modern web technologies and a keen eye for design, I transform complex
+          ideas into elegant, high-performance solutions.
         </p>
         <p>
-          With expertise in Java, JavaScript, React, and various other
-          technologies, I enjoy tackling complex problems and turning innovative
-          ideas into functional digital solutions. I'm always eager to learn new
-          technologies and contribute to meaningful projects that make a
-          difference.
+          Whether you need a stunning website, a powerful web application, or a
+          complete digital transformation, I bring technical expertise and
+          creative vision to every project. I'm committed to delivering
+          solutions that not only meet but exceed expectations, helping
+          businesses and individuals achieve their digital goals.
         </p>
         <div class="about-stats">
-          <div class="stat">
-            <h3>6+</h3>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3 class="counter" data-target="9">0</h3>
             <p>Projects Completed</p>
           </div>
-          <div class="stat">
-            <h3>3+</h3>
-            <p>Months Experience</p>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-icon">
+              <i class="fas fa-smile"></i>
+            </div>
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Client Satisfaction</p>
           </div>
-          <div class="stat">
-            <h3>5+</h3>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-icon">
+              <i class="fas fa-code-branch"></i>
+            </div>
+            <h3 class="counter" data-target="10">0</h3>
             <p>Technologies Mastered</p>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+            <div class="stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>24/7</h3>
+            <p>Support Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-container container">
+      <div class="division"></div>
+      <div class="content-text" data-aos="fade-up">
+        <h2>Services I Offer</h2>
+        <p>
+          Professional freelance development services tailored to your needs
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-sitemap"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>
+            Full-stack web applications with modern frameworks like React,
+            Node.js, and Express. Responsive, fast, and SEO-optimized websites.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Responsive Design</li>
+            <li><i class="fas fa-check"></i> RESTful APIs</li>
+            <li><i class="fas fa-check"></i> Database Integration</li>
+            <li><i class="fas fa-check"></i> Performance Optimization</li>
+          </ul>
+          <a href="#contact" class="service-btn"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="service-card featured"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="featured-badge">Most Popular</div>
+          <div class="service-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3>Full-Stack Solutions</h3>
+          <p>
+            Complete end-to-end development from frontend to backend, including
+            deployment and maintenance.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Frontend + Backend</li>
+            <li><i class="fas fa-check"></i> Database Design</li>
+            <li><i class="fas fa-check"></i> Cloud Deployment</li>
+            <li><i class="fas fa-check"></i> Ongoing Support</li>
+          </ul>
+          <a href="#contact" class="service-btn"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-pen-nib"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>
+            Beautiful, intuitive interfaces that provide exceptional user
+            experiences and drive engagement.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> User Interface Design</li>
+            <li><i class="fas fa-check"></i> Prototyping</li>
+            <li><i class="fas fa-check"></i> User Research</li>
+            <li><i class="fas fa-check"></i> Brand Identity</li>
+          </ul>
+          <a href="#contact" class="service-btn"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-cubes"></i>
+          </div>
+          <h3>Java Applications</h3>
+          <p>
+            Desktop applications using Java Swing, AWT with MySQL database
+            integration for enterprise solutions.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Desktop Apps</li>
+            <li><i class="fas fa-check"></i> Database Systems</li>
+            <li><i class="fas fa-check"></i> Game Development</li>
+            <li><i class="fas fa-check"></i> Custom Solutions</li>
+          </ul>
+          <a href="#contact" class="service-btn"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>AI Integration</h3>
+          <p>
+            Integrate AI capabilities like chatbots, content generation, and
+            smart automation into your applications.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> AI Chatbots</li>
+            <li><i class="fas fa-check"></i> API Integration</li>
+            <li><i class="fas fa-check"></i> Automation</li>
+            <li><i class="fas fa-check"></i> Smart Features</li>
+          </ul>
+          <a href="#contact" class="service-btn"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-life-ring"></i>
+          </div>
+          <h3>Maintenance & Support</h3>
+          <p>
+            Keep your applications running smoothly with regular updates, bug
+            fixes, and feature enhancements.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Bug Fixes</li>
+            <li><i class="fas fa-check"></i> Performance Tuning</li>
+            <li><i class="fas fa-check"></i> Security Updates</li>
+            <li><i class="fas fa-check"></i> 24/7 Support</li>
+          </ul>
+          <a href="#contact" class="service-btn"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="pricing-section" data-aos="fade-up">
+        <h2>Transparent Pricing</h2>
+        <p>Choose a package that fits your budget and project requirements</p>
+
+        <div class="pricing-cards">
+          <div class="pricing-card" data-aos="zoom-in" data-aos-delay="100">
+            <h3>Starter</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">500</span>
+              <span class="period">/project</span>
+            </div>
+            <p class="price-description">
+              Perfect for small projects and landing pages
+            </p>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i> Responsive Design</li>
+              <li><i class="fas fa-check"></i> Up to 5 Pages</li>
+              <li><i class="fas fa-check"></i> Basic SEO</li>
+              <li><i class="fas fa-check"></i> 1 Month Support</li>
+              <li><i class="fas fa-check"></i> Contact Form</li>
+            </ul>
+            <a href="#contact" class="pricing-btn">Choose Plan</a>
+          </div>
+
+          <div
+            class="pricing-card featured"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="popular-badge">Most Popular</div>
+            <h3>Professional</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">1500</span>
+              <span class="period">/project</span>
+            </div>
+            <p class="price-description">Ideal for complete web applications</p>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i> Full-Stack Development</li>
+              <li><i class="fas fa-check"></i> Unlimited Pages</li>
+              <li><i class="fas fa-check"></i> Advanced SEO</li>
+              <li><i class="fas fa-check"></i> 3 Months Support</li>
+              <li><i class="fas fa-check"></i> Database Integration</li>
+              <li><i class="fas fa-check"></i> API Development</li>
+              <li><i class="fas fa-check"></i> Cloud Deployment</li>
+            </ul>
+            <a href="#contact" class="pricing-btn">Choose Plan</a>
           </div>
         </div>
       </div>
@@ -138,43 +408,100 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-container container">
       <div class="division"></div>
-      <div class="content-text">
+      <div class="content-text" data-aos="fade-up">
         <h2>Skills & Technologies</h2>
-        <p>Here are the technologies and tools I work with</p>
+        <p>
+          Cutting-edge technologies I use to build amazing digital solutions
+        </p>
       </div>
 
       <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Frontend</h3>
+        <div class="skill-category" data-aos="fade-right" data-aos-delay="100">
+          <div class="skill-icon">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+          </div>
+          <h3>Frontend Development</h3>
           <div class="skill-items">
             <span class="skill-item">HTML5</span>
-            <span class="skill-item">CSS3</span>
-            <span class="skill-item">JavaScript</span>
-            <span class="skill-item">React</span>
+            <span class="skill-item">CSS3 / SCSS</span>
+            <span class="skill-item">JavaScript ES6+</span>
+            <span class="skill-item">React.js</span>
             <span class="skill-item">Responsive Design</span>
+            <span class="skill-item">Tailwind CSS</span>
+            <span class="skill-item">Bootstrap</span>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3>Backend</h3>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-icon">
+            <i class="fas fa-database" aria-hidden="true"></i>
+          </div>
+          <h3>Backend Development</h3>
           <div class="skill-items">
             <span class="skill-item">Java</span>
             <span class="skill-item">Node.js</span>
-            <span class="skill-item">Express</span>
+            <span class="skill-item">Express.js</span>
             <span class="skill-item">MySQL</span>
+            <span class="skill-item">MongoDB</span>
+            <span class="skill-item">REST APIs</span>
             <span class="skill-item">JDBC</span>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3>Tools & Others</h3>
+        <div class="skill-category" data-aos="fade-left" data-aos-delay="300">
+          <div class="skill-icon">
+            <i class="fas fa-toolbox" aria-hidden="true"></i>
+          </div>
+          <h3>Tools & Technologies</h3>
           <div class="skill-items">
-            <span class="skill-item">Git</span>
-            <span class="skill-item">Copilot</span>
-            <span class="skill-item">GitHub</span>
+            <span class="skill-item">Git & GitHub</span>
             <span class="skill-item">VS Code</span>
-            <span class="skill-item">Swing</span>
+            <span class="skill-item">Postman</span>
+            <span class="skill-item">Figma</span>
+            <span class="skill-item">Vercel</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">AI APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-right" data-aos-delay="400">
+          <div class="skill-icon">
+            <i class="fas fa-desktop" aria-hidden="true"></i>
+          </div>
+          <h3>Desktop Development</h3>
+          <div class="skill-items">
+            <span class="skill-item">Java Swing</span>
+            <span class="skill-item">AWT</span>
             <span class="skill-item">Game Development</span>
+            <span class="skill-item">Desktop Apps</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-icon">
+            <i class="fas fa-robot" aria-hidden="true"></i>
+          </div>
+          <h3>AI & Integration</h3>
+          <div class="skill-items">
+            <span class="skill-item">Google Gemini</span>
+            <span class="skill-item">ChatGPT API</span>
+            <span class="skill-item">AI Integration</span>
+            <span class="skill-item">Chatbots</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-left" data-aos-delay="600">
+          <div class="skill-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Best Practices</h3>
+          <div class="skill-items">
+            <span class="skill-item">Clean Code</span>
+            <span class="skill-item">Responsive Design</span>
+            <span class="skill-item">SEO Optimization</span>
+            <span class="skill-item">Performance</span>
+            <span class="skill-item">Security</span>
+            <span class="skill-item">Agile</span>
           </div>
         </div>
       </div>
@@ -183,136 +510,498 @@
     <!-- Projects -->
     <section id="projects" class="project-container container">
       <div class="division"></div>
-      <div class="content-text">
-        <h2>Projects</h2>
+      <div class="content-text" data-aos="fade-up">
+        <h2>Featured Projects</h2>
         <p>
-          Explore some of my personal and collaborative open-source projects
+          Showcasing my best work - from AI-powered applications to enterprise
+          solutions
         </p>
       </div>
 
       <article class="project">
-        <!-- Project 1 -->
-        <div class="card">
+        <!-- Project 1 - CareerForge -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="100">
+          <a
+            class="project-thumb"
+            href="https://career-forge-theta.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/careerforge-card.svg"
+              alt="CareerForge project preview"
+            />
+          </a>
           <div class="project-info">
             <div class="project-bio">
-              <h3>DreamDo</h3>
-              <p>HTML, CSS, and JavaScript</p>
+              <h3>CareerForge</h3>
+              <p>
+                Next.js talent platform with AI resume authoring, cover letter
+                workflows, and interview preparation insights for job seekers.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">Gemini AI</span>
+              </div>
             </div>
-
-            <div class="project-link">
+            <div class="project-actions">
               <a
-                href="https://github.com/Abhish3k-Yadav/DreamDo"
+                class="project-icon-link live"
+                href="https://career-forge-theta.vercel.app/"
                 target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a href="https://www.dreamdo.dev" target="_blank"
-                ><i class="fas fa-globe"></i
-              ></a>
+                rel="noreferrer"
+                aria-label="Open CareerForge live site"
+              >
+                <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View CareerForge live project</span>
+              </a>
+              <a
+                class="project-icon-link code"
+                href="https://github.com/Abhish3k-Yadav/CareerForge"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View CareerForge repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View CareerForge on GitHub</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="card">
+        <!-- Project 2 - Codalyst -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="200">
+          <a
+            class="project-thumb"
+            href="https://codalyst.live"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/codalyst-card.svg"
+              alt="Codalyst project preview"
+            />
+          </a>
           <div class="project-info">
             <div class="project-bio">
               <h3>Codalyst</h3>
-              <p>React, Node.js, Google Gemini AI, Express</p>
+              <p>
+                Developer workflow companion delivering AI pull request reviews,
+                deployment metrics, and actionable delivery insights.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Gemini AI</span>
+              </div>
             </div>
-
-            <div class="project-link">
+            <div class="project-actions">
               <a
+                class="project-icon-link live"
+                href="https://codalyst.live"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Codalyst live site"
+              >
+                <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View Codalyst live project</span>
+              </a>
+              <a
+                class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Codalyst"
                 target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a href="https://codalyst.live" target="_blank"
-                ><i class="fas fa-globe"></i
-              ></a>
+                rel="noreferrer"
+                aria-label="View Codalyst repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View Codalyst on GitHub</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="card">
+        <!-- Project 3 - DreamDo -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="300">
+          <a
+            class="project-thumb"
+            href="https://www.dreamdo.dev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/dreamdo-card.svg"
+              alt="DreamDo project preview"
+            />
+          </a>
+          <div class="project-info">
+            <div class="project-bio">
+              <h3>DreamDo</h3>
+              <p>
+                Glassmorphism task manager featuring dual themes, realtime
+                stats, inspirational flows, and persistent productivity
+                tracking.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a
+                class="project-icon-link live"
+                href="https://www.dreamdo.dev"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open DreamDo live app"
+              >
+                <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View DreamDo live project</span>
+              </a>
+              <a
+                class="project-icon-link code"
+                href="https://github.com/Abhish3k-Yadav/DreamDo"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View DreamDo repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View DreamDo on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 - AI Chat-Bot -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="100">
+          <a
+            class="project-thumb"
+            href="https://chat-bot-front-02jr.onrender.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/chatbot-card.svg"
+              alt="AI Chat-Bot project preview"
+            />
+          </a>
+          <div class="project-info">
+            <div class="project-bio">
+              <h3>AI Chat-Bot</h3>
+              <p>
+                Healthcare appointment assistant blending Gemini AI dialog,
+                Google Calendar scheduling, and resilient multi-channel status.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Gemini AI</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a
+                class="project-icon-link live"
+                href="https://chat-bot-front-02jr.onrender.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open AI Chat-Bot live app"
+              >
+                <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View AI Chat-Bot live project</span>
+              </a>
+              <a
+                class="project-icon-link code"
+                href="https://github.com/Abhish3k-Yadav/Chat-Bot"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View AI Chat-Bot repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View AI Chat-Bot on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 - Vidyut Bill -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="200">
+          <a
+            class="project-thumb"
+            href="https://github.com/Abhish3k-Yadav/Vidyut-Bill"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/vidyut-bill-card.svg"
+              alt="Vidyut Bill project preview"
+            />
+          </a>
           <div class="project-info">
             <div class="project-bio">
               <h3>Vidyut Bill</h3>
-              <p>Java, Swing, MySQL, JDBC</p>
+              <p>
+                Java Swing utility billing console featuring tiered tariff
+                calculations, customer ledgers, and printable monthly
+                statements.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Swing</span>
+                <span class="tag">MySQL</span>
+              </div>
             </div>
-
-            <div class="project-link">
+            <div class="project-actions">
               <a
+<<<<<<< HEAD
                 href="https://github.com/Abhish3k-Yadav/VidyutBill"
+=======
+                class="project-icon-link code"
+                href="https://github.com/Abhish3k-Yadav/Vidyut-Bill"
+>>>>>>> 9d90df6 (Update)
                 target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
+                rel="noreferrer"
+                aria-label="View Vidyut Bill repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View Vidyut Bill on GitHub</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="card">
+        <!-- Project 6 - Super Dash -->
+        <div
+          class="card project-card project-card--superdash"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <a
+            class="project-thumb project-thumb--superdash"
+            href="https://github.com/Abhish3k-Yadav/Super-Dash"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/super-dash-card.svg"
+              alt="Super Dash project preview"
+            />
+          </a>
           <div class="project-info">
             <div class="project-bio">
               <h3>Super Dash</h3>
-              <p>Java, Swing, Awt, Game Development OOP</p>
+              <p>
+                Java arcade shooter where Superman dodges armored battalions,
+                blasts projectiles, and tracks persistent high scores.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Swing</span>
+                <span class="tag">Game Dev</span>
+              </div>
             </div>
-
-            <div class="project-link">
+            <div class="project-actions">
               <a
+                class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Super-Dash"
                 target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
+                rel="noreferrer"
+                aria-label="View Super Dash repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View Super Dash on GitHub</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="card">
+        <!-- Project 7 - Simon Says -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="100">
+          <a
+            class="project-thumb"
+            href="https://simon-says-rose.vercel.app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/simon-says-card.svg"
+              alt="Simon Says project preview"
+            />
+          </a>
           <div class="project-info">
             <div class="project-bio">
               <h3>Simon Says</h3>
-              <p>HTML, CSS, JavaScript, DOM Manipulation</p>
+              <p>
+                Browser-based remake of the classic memory sequencer featuring
+                rhythmic lighting cues, adaptive rounds, and streak analytics.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
             </div>
-
-            <div class="project-link">
+            <div class="project-actions">
               <a
+                class="project-icon-link live"
+                href="https://simon-says-rose.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Simon Says live game"
+              >
+                <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">Play Simon Says live</span>
+              </a>
+              <a
+                class="project-icon-link code"
                 href="https://github.com/Abhish3k-Yadav/Simon-Says"
                 target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a href="https://simon-says-rose.vercel.app" target="_blank"
-                ><i class="fas fa-globe"></i
-              ></a>
+                rel="noreferrer"
+                aria-label="View Simon Says repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View Simon Says on GitHub</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 6 -->
-        <div class="card">
+        <!-- Project 8 - LoginDB -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="200">
+          <a
+            class="project-thumb"
+            href="https://github.com/Abhish3k-Yadav/LoginDB"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/logindb-card.svg"
+              alt="LoginDB project preview"
+            />
+          </a>
           <div class="project-info">
             <div class="project-bio">
-              <h3>Coming Soon</h3>
-              <p>Currently under development. Stay tuned!</p>
+              <h3>LoginDB</h3>
+              <p>
+                Full MERN admin console delivering JWT auth, employee lifecycle
+                management, media uploads, and production-grade validation.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+              </div>
             </div>
+            <div class="project-actions">
+              <a
+                class="project-icon-link code"
+                href="https://github.com/Abhish3k-Yadav/LoginDB"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View LoginDB repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View LoginDB on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-            <div class="project-link">
-              <a href="https://github.com/Abhish3k-Yadav" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
+        <!-- Project 9 - Portfolio Website -->
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="300">
+          <a
+            class="project-thumb"
+            href="https://www.abhishekyadav.me"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="./assets/project/portfolio-card.svg"
+              alt="Portfolio website preview"
+            />
+          </a>
+          <div class="project-info">
+            <div class="project-bio">
+              <h3>Portfolio Website</h3>
+              <p>
+                Immersive personal brand experience with animated aurora
+                theming, service funnels, and conversion-focused storytelling.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a
+                class="project-icon-link live"
+                href="https://www.abhishekyadav.me"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open portfolio live site"
+              >
+                <img src="./assets/live-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View portfolio live site</span>
+              </a>
+              <a
+                class="project-icon-link code"
+                href="https://github.com/Abhish3k-Yadav/Portfolio-Abhishek"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View portfolio repository on GitHub"
+              >
+                <img src="./assets/github-icon.svg" alt="" aria-hidden="true" />
+                <span class="sr-only">View portfolio on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10 - Future Launches -->
+        <div
+          class="card project-card coming-soon"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div class="project-thumb">
+            <img
+              src="./assets/project/future-projects-card.svg"
+              alt="Future projects teaser"
+            />
+          </div>
+          <div class="project-info">
+            <div class="project-bio">
+              <h3>More Launches Coming</h3>
+              <p>
+                I'm experimenting with AI, design systems, and SaaS tooling.
+                Follow along for fresh case studies and product drops soon.
+              </p>
+            </div>
+            <div class="project-actions">
+              <a class="project-action secondary" href="#contact">
+                <i class="fas fa-handshake"></i> Collaborate With Me
+              </a>
             </div>
           </div>
         </div>
       </article>
 
-      <a
-        href="https://github.com/Abhish3k-Yadav"
-        class="btn btn-secondary"
-        target="_blank"
-        >See More <i class="fas fa-arrow-right"></i
-      ></a>
+      <div class="project-cta" data-aos="fade-up">
+        <h3>Interested in working together?</h3>
+        <p>Let's create something amazing!</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Start a Project
+          </a>
+          <a
+            href="https://github.com/Abhish3k-Yadav"
+            class="btn btn-secondary"
+            target="_blank"
+            >View All on GitHub <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
@@ -437,6 +1126,8 @@
         </p>
       </div>
     </footer>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
